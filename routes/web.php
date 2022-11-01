@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AppController;
+use App\Http\Controllers\Autentikasi\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +23,12 @@ Route::get("/templating", function(){
     return view("/templating");
 });
 
-Route::get("/dashboard", [AppController::class,"dashboard"]);
+Route::group(["middleware" => ["guest"]], function() {
+    Route::get("/login", [LoginController::class, "login"]);
+    Route::post("/login", [LoginController::class, "post_login"]);
+});
+
+
+Route::group(["middleware" => ["autentikasi"]], function() {
+    Route::get("/dashboard", [AppController::class, "dashboard"]);
+});
