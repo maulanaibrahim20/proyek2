@@ -32,3 +32,8 @@ Route::group(["middleware" => ["guest"]], function() {
 Route::group(["middleware" => ["autentikasi"]], function() {
     Route::get("/dashboard", [AppController::class, "dashboard"]);
 });
+
+Route::get("logout", function() {
+    Auth::logout(); 
+    return redirect ("/login");
+});
