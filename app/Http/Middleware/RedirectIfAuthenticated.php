@@ -20,7 +20,17 @@ class RedirectIfAuthenticated
     public function handle(Request $request, Closure $next, $guard=NULL)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/dashboard');
+            if (Auth::user()->role_id == 1){
+                return redirect("admin/dashboard");
+            }else if (Auth::user()->role_id == 2){
+                return redirect("kepala_puskesmas/dashboard");
+            }else if (Auth::user()->role_id == 3){
+                return redirect("kepala_kecamatan/dashboard");
+            }else if (Auth::user()->role_id == 4){
+                return redirect("kepala_desa/dashboard");
+            }else if (Auth::user()->role_id == 5){
+                return redirect("bidan/dashboard");
+            }
         }
 
         return $next($request);

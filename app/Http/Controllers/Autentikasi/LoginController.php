@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Autentikasi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -13,21 +14,36 @@ class LoginController extends Controller
     }
 
     public function post_login(Request $request){
+        $user = User::where("username", $request->username)->first();
+        
+        
         if (Auth::attempt([
             "username" => $request->username,
             "password" => $request->password
         ])){
             $request->session()->regenerate();
             
-            return redirect("/dashboard");
+            if($user->role_id == 1){
+                return redirect("admin/dashboard");
+            }else if($user->role_id == 2) {
+                return redirect("kepala_puskesmas/dashboard");
+            }else if($user->role_id == 3){
+                return redirect("kepala_kecamatan/dashboard");
+            }else if($user->role_id == 4){
+                return redirect("kepala_desa/dashboard");
+            }else if($user->role_id == 5){
+                return redirect("bidan/dashboard");
+            }
+
+            
+            
         }else{
             return back();
         }
     }
-
-    // public function logout(){
-    //     Auth::logout():
-
-    //     return redirect("/login");
-    // }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect("/login");
+    }
 }

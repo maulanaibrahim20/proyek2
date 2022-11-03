@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
         ]);
         User::create([
             "nama" => "Kepala Kecamatan",
-            "username" => "kepalapuskesmas",
+            "username" => "kepalakecamatan",
             "email" => "admin2@gmail.com",
             "password" => bcrypt("password"),
             "alamat" => "indramayu",
