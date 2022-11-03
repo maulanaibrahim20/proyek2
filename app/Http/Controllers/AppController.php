@@ -9,6 +9,7 @@ class AppController extends Controller
     public function dashboard_admin()
     {
         return view('admin.dashboard_admin') ;
+        return view('dashboard') ;
     }
     public function dashboard_bidan()
     {

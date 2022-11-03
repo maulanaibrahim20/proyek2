@@ -64,22 +64,26 @@
                     </span>
                     <h4 class="text-section">Components</h4>
                 </li>
+                @can("admin")
                 <li class="nav-item">
-                    <a data-toggle="collapse" href="#forms">
+                    <a data-toggle="collapse" href="#daftar_akun">
                         <i class="fas fa-pen-square"></i>
-                        <p>Forms</p>
+                        <p>Daftar Akun</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="forms">
+                    <div class="collapse" id="daftar_akun">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="forms/forms.html">
-                                    <span class="sub-item">Basic Form</span>
+                                <a href="{{ url ('/admin/pendaftaran') }}">
+                                    <span class="sub-item">
+                                        Form Pendaftaran
+                                    </span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </li>
+                @endcan
                 <li class="nav-item">
                     <a href="widgets.html">
                         <i class="fas fa-desktop"></i>

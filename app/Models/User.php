@@ -37,4 +37,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getAkses(){
+        //model tujuan ID untuk relasi, ID Tujuan
+        return $this->belongsTo("App\Models\Akun\Role", "Role_id", "id");
+    }
 }
