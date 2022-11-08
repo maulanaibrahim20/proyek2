@@ -34,5 +34,6 @@
 		<!-- End Custom template -->
 	</div>
 	@include("komponen.js.style_js")
+	@yield("js")
 </body>
 </html>

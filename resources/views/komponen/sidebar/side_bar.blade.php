@@ -74,9 +74,9 @@
                     <div class="collapse" id="daftar_akun">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="{{ url ('/admin/pendaftaran') }}">
+                                <a href="{{ url ('/admin/akun/bidan') }}">
                                     <span class="sub-item">
-                                        Form Pendaftaran
+                                        Form Pendaftaran Bidan
                                     </span>
                                 </a>
                             </li>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\Autentikasi\LoginController;
+use App\Http\Controllers\Admin\Akun\BidanController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -32,9 +33,18 @@ Route::group(["middleware" => ["guest"]], function () {
 
 
 Route::group(["middleware" => ["autentikasi"]], function () {
+    Route::group(["middleware"=>["can:admin"]], function () {
+        //admin
+        Route::prefix("admin")->group(function () {
+            Route::get("/dashboard", [AppController::class, "dashboard_admin"]);
+            Route::get("/akun/bidan", [BidanController::class, "index"]);
+            Route::post("/akun/bidan/store",[BidanController::class, "store"]);
+        });
+
+    });
+
     Route::get("/logout", [LoginController::class, "logout"]);
 
-    Route::get("admin/dashboard", [AppController::class, "dashboard_admin"]);
     Route::get("kepala_puskesmas/dashboard", [AppController::class, "dashboard_puskesmas"]);
     Route::get("kepala_kecamatan/dashboard", [AppController::class, "dashboard_kecamatan"]);
     Route::get("kepala_desa/dashboard", [AppController::class, "dashboard_desa"]);

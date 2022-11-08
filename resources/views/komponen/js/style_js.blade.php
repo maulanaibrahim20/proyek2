@@ -19,8 +19,6 @@
 <!-- Chart Circle -->
 <script src="{{url('')}}/assets/js/plugin/chart-circle/circles.min.js"></script>
 
-<!-- Datatables -->
-<script src="{{url('')}}/assets/js/plugin/datatables/datatables.min.js"></script>
 
 <!-- Bootstrap Notify -->
 <!-- <script src="{{url('')}}/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script> -->

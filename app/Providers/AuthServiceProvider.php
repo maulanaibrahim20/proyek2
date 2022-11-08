@@ -27,10 +27,10 @@ class AuthServiceProvider extends ServiceProvider
 
         //
         Gate::define("admin", function ($user){
-            if(empty($user->gerAkses)){
+            if(empty($user->getAkses)){
                 return redirect("/logout");
             }else {
-                return $user->getAkses->id == 4;
+                return $user->getAkses->id == 1;
             }
         });
     }

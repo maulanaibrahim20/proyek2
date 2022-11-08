@@ -40,6 +40,6 @@ class User extends Authenticatable
 
     public function getAkses(){
         //model tujuan ID untuk relasi, ID Tujuan
-        return $this->belongsTo("App\Models\Akun\Role", "Role_id", "id");
+        return $this->belongsTo("App\Models\Akun\Role", "role_id", "id");
     }
 }
