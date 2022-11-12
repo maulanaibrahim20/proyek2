@@ -80,6 +80,13 @@
                                     </span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{ url ('/admin/akun/pasien') }}">
+                                    <span class="sub-item">
+                                        Form Pendaftaran Pasien
+                                    </span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>

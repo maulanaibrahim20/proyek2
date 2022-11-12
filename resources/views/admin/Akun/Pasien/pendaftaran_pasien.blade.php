@@ -4,7 +4,7 @@
 
 <div class="page-inner">
     <div class="page-header">
-        <h4 class="page-title">Pendaftaran Bidan</h4>
+        <h4 class="page-title">Pendaftaran Pasien</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
                 <a href="{{ url('/admin/dashboard') }}">
@@ -15,7 +15,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="{{ url ('/admin/akun/bidan') }}">Form Pendaftaran Bidan</a>
+                <a href="{{ url ('/admin/akun/pasien') }}">Form Pendaftaran Pasien</a>
             </li>
         </ul>
     </div>
@@ -23,7 +23,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Data Bidan</h4>
+                    <h4 class="card-title">Data Pasien</h4>
                     <button type="button" class="btn btn-primary pull-right " data-toggle="modal" data-target="#exampleModal">
                         <i class="fa fa-plus"></i>  Tambah Data
                     </button>
@@ -37,6 +37,7 @@
                                     <th>Nama</th>
                                     <th>Username</th>
                                     <th>Email</th>
+                                    <th>Alamat</th>
                                     <th>Nomer Hp</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
@@ -45,7 +46,7 @@
                                 <?php
                                 $no = 1
                                 ?>
-                                @foreach ($bidan as $data)
+                                @foreach ($pasien as $data)
                                 <tr>
                                     
                                     <td class="text-center"> {{ $no++ }}</td>
@@ -109,10 +110,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">email</label>
-                        <input type="email" class="form-control" name="email"
-                        id="email" placeholder="Masukan Email(example@gmail.com)" required>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="nik">NIK</label>
+                                <input type="text" class="form-control" name="nik"
+                                id="nik" placeholder="32xxxxx" required min="16">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">email</label>
+                                <input type="email" class="form-control" name="email"
+                                id="email" placeholder="Masukan Email(example@gmail.com)" required>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3">
@@ -130,10 +142,40 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="agama">Agama</label>
+                            <select name="agama" id="agama" class="form-control">
+                                <option> pilih </option>
+                                <option value="islam"> Islam </option>
+                                <option value="kristen"> Kristen </option>
+                                <option value="hindu"> Hindu </option>
+                                <option value="budha"> Budha </option>
+                                <option value="konghuchu"> Konghuchu </option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="alamat">Alamat</label>
                         <textarea class="form-control" name="alamat"
                         id="alamat" placeholder="Masukan Alamat" required></textarea>
+                    </div>
+                    <div class="row">
+                        <div col-md-6>
+                            <div class="form-group">
+                                <label for="tempat">Tempat Lahir</label>
+                                <input type="text" class="form-control" name="tempat"
+                                id="tempat" placeholder="Masukan Tempat Lahir">
+                            </div>
+                        </div>
+                        <div col-md-6>
+                            <div class="form-group">
+                                <label for="tanggal">Tanggal Lahir</label>
+                                <input type="date" class="form-control" name="tanggal"
+                                id="tanggal">
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -146,7 +188,7 @@
 <!-- end -->
 
 <!-- Edit Data -->
-@foreach ($bidan as $edit)
+@foreach ($pasien as $edit)
 <div class="modal fade" id="example-edit{{ $edit->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

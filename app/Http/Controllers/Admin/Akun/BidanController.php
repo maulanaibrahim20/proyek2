@@ -42,4 +42,29 @@ class BidanController extends Controller
 
         return back();
     }
+    
+    public function update(Request $request, $user_id)
+    {
+        User::where("id", $user_id)->update([
+            "nama"=> $request->nama,
+            "username"=> $request->username,
+            "email"=> $request->email,
+            "umur"=> $request->umur,
+            "alamat"=> $request->alamat,
+        ]);
+        Bidan::where("user_id", $user_id)->update([
+            "nomor_hp"=> $request->nomor,
+        ]);
+
+        return back();
+    }
+    public function destroy($user_id){
+        $user = Bidan::where("user_id", $user_id)->first();
+
+        $user->delete();
+
+        User::where("id",$user_id)->delete();
+
+        return back();
+    }
 }
