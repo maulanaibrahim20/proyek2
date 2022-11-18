@@ -16,10 +16,8 @@ return new class extends Migration
         Schema::create('pasien', function (Blueprint $table) {
             $table->id();
             $table->string("nik",50);
-            $table->string("tempat");
-            $table->date("tanggal_lahir");
-            $table->string("agama",20);
-            $table->string("nomor_hp",15);
+            $table->integer("user_id");
+            $table->bigInteger("nomor_hp");
             $table->timestamps();
         });
     }

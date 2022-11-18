@@ -33,6 +33,8 @@ class LoginController extends Controller
                 return redirect("kepala_desa/dashboard");
             }else if($user->role_id == 5){
                 return redirect("bidan/dashboard");
+            }else if($user->role_id == 6){
+                return redirect("pasien/dashboard");
             }
 
             

@@ -57,6 +57,8 @@ class BidanController extends Controller
         ]);
 
         return back();
+
+        //function hapus(DELETE)
     }
     public function destroy($user_id){
         $user = Bidan::where("user_id", $user_id)->first();
@@ -67,4 +69,5 @@ class BidanController extends Controller
 
         return back();
     }
+    //End Hapus
 }

@@ -60,4 +60,5 @@ Route::group(["middleware" => ["autentikasi"]], function () {
     Route::get("kepala_kecamatan/dashboard", [AppController::class, "dashboard_kecamatan"]);
     Route::get("kepala_desa/dashboard", [AppController::class, "dashboard_desa"]);
     Route::get("bidan/dashboard", [AppController::class, "dashboard_bidan"]);
+    Route::get("pasien/dashboard", [AppController::class, "dashboard_pasien"]);
 });

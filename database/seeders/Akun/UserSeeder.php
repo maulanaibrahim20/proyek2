@@ -60,5 +60,14 @@ class UserSeeder extends Seeder
             "umur" => 11,
             "role_id" => "5",
         ]);
+        User::create([
+            "nama" => "Pasien",
+            "username" => "pasien",
+            "email" => "admin5@gmail.com",
+            "password" => bcrypt("password"),
+            "alamat" => "indramayu",
+            "umur" => 11,
+            "role_id" => "6",
+        ]);
     }
 }

@@ -27,4 +27,8 @@ class AppController extends Controller
     {
         return view('puskesmas.dashboard_puskesmas');
     }
+    public function dashboard_pasien()
+    {
+        return view('pasien.dashboard_pasien');
+    }
 }
