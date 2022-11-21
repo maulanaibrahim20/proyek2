@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Atlantis Lite - Bootstrap 4 Admin Dashboard</title>
+	<title>Puskesmas Lohbener</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	
 	@include("komponen.css.style_css")
@@ -24,7 +24,7 @@
 			<footer class="footer">
 				<div class="container-fluid">
 					<div class="copyright ml-auto">
-						2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
+						2022, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">Team 8</a>
 					</div>				
 				</div>
 			</footer>

@@ -80,7 +80,7 @@
                                     </span>
                                 </a>
                             </li>
-                            <li>
+                            <li>    
                                 <a href="{{ url ('/admin/akun/pasien') }}">
                                     <span class="sub-item">
                                         Form Pendaftaran Pasien
@@ -93,8 +93,15 @@
                 @endcan
                 <li class="nav-item">
                     <a href="widgets.html">
-                        <i class="fas fa-desktop"></i>
-                        <p>Widgets</p>
+                        <i class="fa fa-user-md" aria-hidden="true"></i>
+                        <p>Pasien Risti</p>
+                        <span class="badge badge-success">4</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="widgets.html">
+                        <i class="fa fa-print" aria-hidden="true"></i>
+                        <p>Cetak</p>
                         <span class="badge badge-success">4</span>
                     </a>
                 </li>
