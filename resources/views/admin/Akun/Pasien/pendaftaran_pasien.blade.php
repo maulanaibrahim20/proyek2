@@ -133,6 +133,24 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="tanggal_lahir">Tanggal Lahir</label>
+                                <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label >Pekerjaan</label>
+                                <input type="text" class="form-control" name="pekerjaan" id="pekerjaan">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama_suami"> Nama Suami</label>
+                            <input type="text" class="form-control" name="nama_suami" id="nama_suami" placeholder="Nama Suami" required >
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="alamat"> Alamat </label>
                         <textarea name="alamat" class="form-control" id="alamat" rows="5" placeholder="Masukkan Alamat" required></textarea>
@@ -158,11 +176,15 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="post" action="{{ url("admin/akun/bidan/".$edit->user_id) }}">
+            <form method="post" action="{{ url("admin/akun/pasien/".$edit->user_id) }}">
                 @method("PUT")
                 @csrf 
                 {{-- fungsi pengaman metode hacking --}}
                 <div class="modal-body">
+                    <div class="form-group">
+                        <label for="nik"> NIK </label>
+                        <input type="number" class="form-control" name="nik" id="nik" placeholder="Masukkan NIK"  value="{{$edit->nik }}">
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -198,6 +220,24 @@
                                 <input type="text" class="form-control" name="nomor"
                                 id="nomor" placeholder="08xxxxx" required min="20" value="{{$edit->nomor_hp}}">
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="tanggal_lahir">Tanggal Lahir</label>
+                                <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" value="{{$edit->tanggal_lahir}}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label >Pekerjaan</label>
+                                <input type="text" class="form-control" name="pekerjaan" id="pekerjaan" value="{{$edit->pekerjaan}}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama_suami"> Nama Suami</label>
+                            <input type="text" class="form-control" name="nama_suami" id="nama_suami" placeholder="Nama Suami" value="{{ $edit->nama_suami }}" >
                         </div>
                     </div>
                     <div class="form-group">

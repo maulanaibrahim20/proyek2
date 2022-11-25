@@ -12,7 +12,7 @@ class PasienController extends Controller
     public function index()
     {
         $data = [
-            "pasien" => Pasien::orderBy("created_at", "DESC")->get()
+            "pasien" => Pasien::orderBy("tanggal_daftar", "DESC")->get()
         ];
         
         return view("admin.Akun.Pasien.pendaftaran_pasien",$data);
@@ -32,13 +32,18 @@ class PasienController extends Controller
 
         $user->save();
 
-        $bidan = new Pasien();
+        $pasien = new pasien();
 
-        $bidan["nik"] = $request["nik"];
-        $bidan["nomor_hp"] = $request["nomor_hp"];
-        $bidan["user_id"] = $user->id;
+        $pasien["kode_pasien"] = date("YmdHis");  
+        $pasien["nik"] = $request["nik"];
+        $pasien["tanggal_lahir"] = $request["tanggal_lahir"];
+        $pasien["pekerjaan"] = $request["pekerjaan"];
+        $pasien["tanggal_daftar"] = date("Ymd");
+        $pasien["nama_suami"] = $request["nama_suami"];
+        $pasien["nomor_hp"] = $request["nomor_hp"];
+        $pasien["user_id"] = $user->id;
 
-        $bidan->save();
+        $pasien->save();
 
         return back();
     }
@@ -54,6 +59,9 @@ class PasienController extends Controller
         ]);
         Pasien::where("user_id", $user_id)->update([
             "nik"=> $request->nik,
+            "tanggal_lahir"=> $request->tanggal_lahir,
+            "pekerjaan"=> $request->pekerjaan,
+            "nama_suami" => $request->nama_suami,
             "nomor_hp"=> $request->nomor
         ]);
 
@@ -64,7 +72,7 @@ class PasienController extends Controller
 
         $user->delete();
 
-        User::where("id",$user_id)->delete();
+        User::where("user_id",$user_id)->delete();
 
         return back();
     }
