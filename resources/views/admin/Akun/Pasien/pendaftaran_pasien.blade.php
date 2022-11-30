@@ -99,7 +99,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="nik"> NIK </label>
-                        <input type="number" class="form-control" name="nik" id="nik" placeholder="Masukkan NIK" required min="1">
+                        <input type="number" class="form-control" name="nik" id="nik" placeholder="Masukkan NIK" required min="16">
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -129,7 +129,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="nomor_hp"> Nomor HP </label>
-                                <input type="text" class="form-control" name="nomor_hp" id="nomor_hp" placeholder="0" required min="1">
+                                <input type="text" class="form-control" name="nomor_hp" id="nomor_hp" placeholder="0" required min="12">
                             </div>
                         </div>
                     </div>

@@ -67,7 +67,7 @@
                 @can("admin")
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#daftar_akun">
-                        <i class="fas fa-pen-square"></i>
+                        <i class="fa fa-pen-square"></i>
                         <p>Daftar Akun</p>
                         <span class="caret"></span>
                     </a>
@@ -92,11 +92,22 @@
                 </li>
                 @endcan
                 <li class="nav-item">
-                    <a href="widgets.html">
-                        <i class="fa fa-user-md" aria-hidden="true"></i>
-                        <p>Pasien Risti</p>
-                        <span class="badge badge-success">4</span>
+                    <a data-toggle="collapse" href="#perawatan">
+                        <i class="fas   fa-pen-square"></i>
+                        <p>Perawatan</p>
+                        <span class="caret"></span>
                     </a>
+                    <div class="collapse" id="perawatan">
+                        <ul class="nav nav-collapse">
+                            <li>    
+                                <a href="{{ url ('/bidan/perawatan/pasien') }}">
+                                    <span class="sub-item">
+                                        Pasien
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a href="widgets.html">

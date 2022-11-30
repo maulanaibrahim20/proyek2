@@ -4,6 +4,7 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\Autentikasi\LoginController;
 use App\Http\Controllers\Admin\Akun\BidanController;
 use App\Http\Controllers\Admin\Akun\PasienController;
+use App\Http\Controllers\Bidan\Perawatan\KeluhanController;
 use App\Models\Akun\Bidan;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -59,6 +60,14 @@ Route::group(["middleware" => ["autentikasi"]], function () {
     Route::get("kepala_puskesmas/dashboard", [AppController::class, "dashboard_puskesmas"]);
     Route::get("kepala_kecamatan/dashboard", [AppController::class, "dashboard_kecamatan"]);
     Route::get("kepala_desa/dashboard", [AppController::class, "dashboard_desa"]);
-    Route::get("bidan/dashboard", [AppController::class, "dashboard_bidan"]);
+
+    Route::prefix("bidan")->group(function(){
+            Route::prefix("perawatan")->group(function(){
+                Route::get("/pasien", [KeluhanController::class,"data_pasien"]);
+            });
+        Route::get("dashboard", [AppController::class, "dashboard_bidan"]);
+        
+    });
+
     Route::get("pasien/dashboard", [AppController::class, "dashboard_pasien"]);
 });
