@@ -67,12 +67,13 @@ class PasienController extends Controller
 
         return back();
     }
-    public function destroy($user_id){
-        $user = Pasien::where("user_id", $user_id)->first();
+    public function destroy($kode_pasien){
+        
+        $user = Pasien::where("kode_pasien", $kode_pasien)->first();
 
         $user->delete();
 
-        User::where("user_id",$user_id)->delete();
+        User::where("id", $user->user_id)->delete();
 
         return back();
     }

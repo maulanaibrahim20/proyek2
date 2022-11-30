@@ -13,6 +13,8 @@ class Pasien extends Model
     protected $guarded = [''];
     public $timestamps = false;
 
+    public $primaryKey ="kode_pasien";
+
     public function getPasien()
     {
         return $this->belongsTo('App\Models\User', "user_id", "id");

@@ -39,7 +39,6 @@
                                     <th>NIK</th>
                                     <th>Alamat</th>
                                     <th>Umur</th>
-                                    <th>Email</th>
                                     <th>Nomer Hp</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
@@ -57,18 +56,17 @@
                                     <td>{{$data->nik}}</td>
                                     <td>{{$data->getPasien->alamat}}</td>
                                     <td>{{$data->getPasien->umur}}</td>
-                                    <td>{{$data->getPasien->email}}</td>
                                     <td>{{ $data->nomor_hp }}</td>
                                     <td class="text-center">
                                         
-                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#example-edit{{$data->id }}">
+                                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#example-edit{{$data->id }}">
                                             <i class="fa fa-edit"></i> Edit
                                         </button>
                                         &nbsp;
-                                        <form action="{{url('/admin/akun/pasien/'. $data->user_id) }}" method="POST" style="display:inline">
+                                        <form action="{{url('/admin/akun/pasien/'. $data->kode_pasien) }}" method="POST" style="display:inline">
                                             @method("DELETE")
                                             @csrf
-                                            <button type="submit" class="btn btn-danger " onclick="return confirm('Apakah Anda Ingin Dihapus?')">
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Ingin Dihapus?')">
                                                 <i class="fa fa-trash"></i>  Delete
                                             </button>
                                         </form>
