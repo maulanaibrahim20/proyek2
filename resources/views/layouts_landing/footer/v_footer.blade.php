@@ -1,9 +1,9 @@
 <footer id="newsletter">
     <div class="container">
-        <div class="row">
+        <div class="center">
             <div class="col-lg-8 offset-lg-2">
                 <div class="section-heading">
-                    <h4>Join our mailing list to receive the news &amp; latest trends</h4>
+                    <h4>Kontak Kami &amp; Alamat</h4>
                 </div>
             </div>
             <div class="col-lg-6 offset-lg-3">
@@ -16,7 +16,8 @@
                         </div>
                         <div class="col-lg-6 col-sm-6">
                             <fieldset>
-                                <button type="submit" class="main-button">Subscribe Now <i class="fa fa-angle-right"></i></button>
+                                <button type="submit" class="main-button"> Beri Masukan Anda <i class="fa fa-angle-right"></i>
+                                </button>
                             </fieldset>
                         </div>
                     </div>
@@ -26,59 +27,30 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="footer-widget">
-                    <h4>Contact Us</h4>
-                    <p>Rio de Janeiro - RJ, 22795-008, Brazil</p>
-                    <p><a href="#">010-020-0340</a></p>
-                    <p><a href="#">info@company.co</a></p>
+                    <h4>Kontak Kami</h4>
+                    <p>UPTD Puskesmas Lohbener</p>
+                    <p><a href="#">Telepon: (0234) 7120217</a></p>
+                    <p><a href="#">Instagram: @puskesmaslohbener</a></p>
+                    <p><a href="#">Facebook: Puskesmas Lohbener</a></p>
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="footer-widget">
-                    <h4>About Us</h4>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Pricing</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Pricing</a></li>
-                    </ul>
+                    <h4>Alamat</h4>
+                    <p>Jl. By Pass, Lohbener, Kec. Lohbener, Kabupaten Indramayu, Jawa Barat 45252</p>
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="footer-widget">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><a href="#">Free Apps</a></li>
-                        <li><a href="#">App Engine</a></li>
-                        <li><a href="#">Programming</a></li>
-                        <li><a href="#">Development</a></li>
-                        <li><a href="#">App News</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="#">App Dev Team</a></li>
-                        <li><a href="#">Digital Web</a></li>
-                        <li><a href="#">Normal Apps</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="footer-widget">
-                    <h4>About Our Company</h4>
-                    <div class="logo">
-                        <img src="{{ url('/landing') }}/assets/images/white-logo.png" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <h4>Maps</h4>
+                    <hr>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.950703733394!2d108.27674701477008!3d-6.400353795368976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6eb864a18cfff5%3A0x9edad96e6562d16a!2sPuskesmas%20Lohbener!5e0!3m2!1sid!2sid!4v1670557130374!5m2!1sid!2sid" width="650" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             <div class="col-lg-12">
                 <div class="copyright-text">
-                    <p>Copyright © 2022 Chain App Dev Company. All Rights Reserved. 
-                        <br>Design: <a href="https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a></p>
+                    <p>Terimakasih Sudah Berkunjung. Salam Sehat. 
+                        <br>Design: <a href="https://templatemo.com/" target="_blank" title="css templates">Kelompok 8 RPL 3</a></p>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-<div id="pricing" class="pricing-tables">
+{{-- <div id="pricing" class="pricing-tables">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
@@ -71,4 +71,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}

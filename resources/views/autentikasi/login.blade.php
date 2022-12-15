@@ -58,6 +58,9 @@
 
                         <div class="row justify-content-center">
                             <div class="col-md-7 col-lg-5">
+                                <a class="btn btn-primary" type="button" href="{{ url('/') }}">
+                                    <h4> < kembali</h4>
+                                </a>
                                 <div class="login-wrap p-4 p-md-5">
                                     <div class="text-center">
                                         <img src="{{ url('autentikasi/img/kesmas.png') }}" alt="50" width="100">

@@ -49,7 +49,8 @@
                                             <td>{{ $ps->getPasien->nama }}</td>
                                             <td>{{ $ps->nomor_hp }}</td>
                                             <td class="text-center">
-                                                <button class="btn btn-success btn-sm" class="button" data-toggle="modal" data-target="#exampleKeluhan">
+                                                <button class="btn btn-success btn-sm" class="button" data-toggle="modal"
+                                                    data-target="#exampleKeluhan">
                                                     <i class="fa fa-plus"></i> Tambah Keluhan
                                                 </button>
                                             </td>
@@ -63,7 +64,7 @@
             </div>
         </div>
     </div>
-
+{{-- tambah keluhan --}}
     <div class="modal fade" id="exampleKeluhan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

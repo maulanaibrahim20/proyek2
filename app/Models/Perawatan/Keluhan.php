@@ -11,4 +11,6 @@ class Keluhan extends Model
     protected  $table = "keluhan";
 
     protected $guarded = [""];
+
+    public $timestamps = false;
 }

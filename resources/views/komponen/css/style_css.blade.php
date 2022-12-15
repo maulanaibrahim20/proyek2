@@ -1,4 +1,4 @@
-<link rel="icon" href="{{url('')}}/assets/img/icon.ico" type="image/x-icon" />
+<link rel="icon" href="{{url('')}}/autentikasi/img/kesmas.png" type="image/x-icon" />
 
 <!-- Fonts and icons -->
 <script src="{{url('')}}/assets/js/plugin/webfont/webfont.min.js"></script>

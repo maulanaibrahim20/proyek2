@@ -3,49 +3,46 @@
         <div class="row">
             <div class="col-lg-6 align-self-center">
                 <div class="section-heading">
-                    <h4>About <em>What We Do</em> &amp; Who We Are</h4>
+                    <h4>Pelayanan <em>PUSKESMAS</em> &amp; LOHBENER</h4>
                     <img src="{{ url('/landing') }}/assets/images/heading-line-dec.png" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut
-                        labore et dolore magna.</p>
+                    <p>Informasi terkait pelayanan puskesmas Lohbener</p>
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="box-item">
-                            <h4><a href="#">Maintance Problems</a></h4>
-                            <p>Lorem Ipsum Text</p>
+                            <h4><a href="#">UGD &amp; FASKES</a></h4>
+                            <p>pelayanan umum</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="box-item">
-                            <h4><a href="#">24/7 Support &amp; Help</a></h4>
-                            <p>Lorem Ipsum Text</p>
+                            <h4><a href="#">Buka 24 jam</a></h4>
+                            <p>Melayani setiap hari</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="box-item">
-                            <h4><a href="#">Fixing Issues About</a></h4>
-                            <p>Lorem Ipsum Text</p>
+                            <h4><a href="#">bit.ly/form-pendaftaran-puskesmas-lohbener</a></h4>
+                            <p>Link pendaftaran online</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="box-item">
-                            <h4><a href="#">Co. Development</a></h4>
-                            <p>Lorem Ipsum Text</p>
+                            <h4><a href="#">Jam 15.00</a></h4>
+                            <p>Waktu terbaik</p>
                         </div>
                     </div>
                     <div class="col-lg-12">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor idunte ut
-                            labore et dolore adipiscing magna.</p>
+                        <p>pelayanan kesehatan yang diselenggarakan oleh puskesmas meliputi pelayanan kuratif (pengobatan), preventif (pencegahan), promotif (peningkatan kesehatan) dan rehabilitasi (pemulihan kesehatan).</p>
                         <div class="gradient-button">
-                            <a href="#">Start 14-Day Free Trial</a>
+                            <a href="#">back to home</a>
                         </div>
-                        <span>*No Credit Card Required</span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="right-image">
-                    <img src="{{ url('/landing') }}/assets/images/about-right-dec.png" alt="">
+                    <img src="{{ url('/landing') }}/assets/images/about-right-dec.png" widht="5" height="800">
                 </div>
             </div>
         </div>

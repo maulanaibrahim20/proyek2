@@ -11,10 +11,9 @@
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="#services">Services</a></li>
-                        <li class="scroll-to-section"><a href="#about">About</a></li>
-                        <li class="scroll-to-section"><a href="#pricing">Pricing</a></li>
-                        <li class="scroll-to-section"><a href="#newsletter">Newsletter</a></li>
+                        <li class="scroll-to-section"><a href="#services">Tentang Kami</a></li>
+                        <li class="scroll-to-section"><a href="#about">Pelayanan</a></li>
+                        <li class="scroll-to-section"><a href="#newsletter">Kontak Kami</a></li>
                         <li>
                             <div class="gradient-button">
                                 @if (empty(Auth::user()->nama))

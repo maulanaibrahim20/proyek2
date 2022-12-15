@@ -4,6 +4,7 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\Autentikasi\LoginController;
 use App\Http\Controllers\Admin\Akun\BidanController;
 use App\Http\Controllers\Admin\Akun\PasienController;
+use App\Http\Controllers\Admin\Pertanyaan\PertanyaanController;
 use App\Http\Controllers\Bidan\Perawatan\KeluhanController;
 use App\Http\Controllers\LandingPageController;
 use App\Models\Akun\Bidan;
@@ -23,6 +24,10 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', [LandingPageController::class, "index"]); //"index" itu nama method yang dimana diambil dari function di controllernya
+// Route::get('/bidan/keluhan/keluhan',[KeluhanController::class, "data_keluhan"]);
+
+// Route::get('/admin/pertanyaan/pertanyaan',[PertanyaanController::class,"index"]);
+
 
 Route::get("/templating", function () {
     return view("/templating");
@@ -38,6 +43,7 @@ Route::group(["middleware" => ["autentikasi"]], function () {
     Route::group(["middleware"=>["can:admin"]], function () {
         //admin
         Route::prefix("admin")->group(function () {
+            Route::get("/pertanyaan/pertanyaan",[PertanyaanController::class,"index"]);
             Route::get("/dashboard", [AppController::class, "dashboard_admin"]);
             
             Route::prefix("akun")->group(function () {    
@@ -60,7 +66,7 @@ Route::group(["middleware" => ["autentikasi"]], function () {
 
     Route::prefix("bidan")->group(function(){
             Route::prefix("perawatan")->group(function(){
-                Route::get("/pasien", [KeluhanController::class,"data_pasien"]);
+                Route::get("/pasien", [KeluhanController::class,"data_pasien"]);  //data_pasien diambil dari class di controller keluhan
             });
         Route::get("dashboard", [AppController::class, "dashboard_bidan"]);
         

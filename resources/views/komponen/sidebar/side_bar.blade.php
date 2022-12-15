@@ -3,7 +3,8 @@
         <div class="sidebar-content">
             <div class="user">
                 <div class="avatar-sm float-left mr-2">
-                    <img src="{{url('')}}/assets/img/profile.jpg" alt="{{url('')}}." class="avatar-img rounded-circle">
+                    <img src="{{ url('') }}/assets/img/profile.jpg" alt="{{ url('') }}."
+                    class="avatar-img rounded-circle">
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -14,7 +15,7 @@
                         </span>
                     </a>
                     <div class="clearfix"></div>
-
+                    
                     <div class="collapse in" id="collapseExample">
                         <ul class="nav">
                             <li>
@@ -46,12 +47,12 @@
                     <div class="collapse" id="dashboard">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="{{url('')}}/demo1/index.html">
+                                <a href="{{ url('') }}/demo1/index.html">
                                     <span class="sub-item">Dashboard 1</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{url('')}}/demo2/index.html">
+                                <a href="{{ url('') }}/demo2/index.html">
                                     <span class="sub-item">Dashboard 2</span>
                                 </a>
                             </li>
@@ -64,7 +65,7 @@
                     </span>
                     <h4 class="text-section">Components</h4>
                 </li>
-                @can("admin")
+                @can('admin')
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#daftar_akun">
                         <i class="fa fa-pen-square"></i>
@@ -74,14 +75,14 @@
                     <div class="collapse" id="daftar_akun">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="{{ url ('/admin/akun/bidan') }}">
+                                <a href="{{ url('/admin/akun/bidan') }}">
                                     <span class="sub-item">
                                         Form Pendaftaran Bidan
                                     </span>
                                 </a>
                             </li>
-                            <li>    
-                                <a href="{{ url ('/admin/akun/pasien') }}">
+                            <li>
+                                <a href="{{ url('/admin/akun/pasien') }}">
                                     <span class="sub-item">
                                         Form Pendaftaran Pasien
                                     </span>
@@ -89,6 +90,13 @@
                             </li>
                         </ul>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('admin/pertanyaan/pertanyaan') }}">
+                        <i class="fa fa-question" aria-hidden="true"></i>
+                        <p>Form Pertanyaan</p>
+                        <span class="badge badge-success"></span>
+                    </a>
                 </li>
                 @endcan
                 <li class="nav-item">
@@ -99,8 +107,8 @@
                     </a>
                     <div class="collapse" id="perawatan">
                         <ul class="nav nav-collapse">
-                            <li>    
-                                <a href="{{ url ('/bidan/perawatan/pasien') }}">
+                            <li>
+                                <a href="{{ url('/bidan/perawatan/pasien') }}">
                                     <span class="sub-item">
                                         Pasien
                                     </span>
@@ -108,6 +116,13 @@
                             </li>
                         </ul>
                     </div>
+                    <li class="nav-item">
+                        <a href="{{ url('') }}">
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                            <p>Rekam Medis</p>
+                            <span class="badge badge-success"></span>
+                        </a>
+                    </li>
                 </li>
                 <li class="nav-item">
                     <a href="widgets.html">
