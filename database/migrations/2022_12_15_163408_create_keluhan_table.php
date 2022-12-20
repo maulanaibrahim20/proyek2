@@ -14,8 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('keluhan', function (Blueprint $table) {
-            $table->id()->primary();
-            $table->string('nama_keluhan');
+            $table->string("no_regis",50)->primary();
+            $table->string("kode_pasien",50);
+            $table->tinyInteger("kehamilan_ke");
+            $table->text("keluhan_pasien");
+            $table->tinyInteger("bidan_id");
+            $table->text("solusi_bidan");
             $table->timestamps();
         });
     }

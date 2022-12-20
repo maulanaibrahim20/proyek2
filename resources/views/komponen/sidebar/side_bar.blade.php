@@ -92,7 +92,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('admin/pertanyaan/pertanyaan') }}">
+                    <a href="{{ url('admin/Master/pertanyaan') }}">
                         <i class="fa fa-question" aria-hidden="true"></i>
                         <p>Form Pertanyaan</p>
                         <span class="badge badge-success"></span>
