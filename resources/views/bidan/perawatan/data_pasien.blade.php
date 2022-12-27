@@ -49,10 +49,10 @@
                                             <td>{{ $ps->getPasien->nama }}</td>
                                             <td>{{ $ps->nomor_hp }}</td>
                                             <td class="text-center">
-                                                <button class="btn btn-success btn-sm" class="button" data-toggle="modal"
-                                                    data-target="#exampleKeluhan">
-                                                    <i class="fa fa-plus"></i> Tambah Keluhan
-                                                </button>
+                                                <a href=" {{ route('diagnosa.show', $ps->kode_pasien) }}" class="btn btn-primary">
+                                                    <i class="fa fa-plus">Tambah Keluhan</i>     
+                                                </a>
+                                                    
                                             </td>
                                         </Tr>
                                     @endforeach

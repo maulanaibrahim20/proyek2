@@ -5,7 +5,10 @@ use App\Http\Controllers\Autentikasi\LoginController;
 use App\Http\Controllers\Admin\Akun\BidanController;
 use App\Http\Controllers\Admin\Akun\PasienController;
 use App\Http\Controllers\Admin\Master\PertanyaanController;
+use App\Http\Controllers\Admin\Pasien\RistiController;
 use App\Http\Controllers\Bidan\Perawatan\KeluhanController;
+use App\Http\Controllers\Bidan\Perawatan\DiagnosaController;
+use App\Http\Controllers\Cetak\CetakController;
 use App\Http\Controllers\LandingPageController;
 use App\Models\Akun\Bidan;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +36,11 @@ Route::get("/templating", function () {
     return view("/templating");
 });
 
+Route::get("/admin/pasien/pasien",[RistiController::class,"index"]);
+
+Route::get("/Cetak/cetak",[CetakController::class,"index"]);
+Route::get("/Cetak/cetak/{kode_pasien}",[CetakController::class,"cetak"])->name('risti');
+
 Route::group(["middleware" => ["guest"]], function () {
     Route::get("/login", [LoginController::class, "login"]);
     Route::post("/login", [LoginController::class, "post_login"]);
@@ -44,9 +52,11 @@ Route::group(["middleware" => ["autentikasi"]], function () {
         //admin
         Route::prefix("admin")->group(function () {
             Route::get("/dashboard", [AppController::class, "dashboard_admin"]);
+            
 
             Route::prefix("Master")->group(function () {
                 Route::resource("pertanyaan", PertanyaanController::class);
+                Route::resource('diagnosa', DiagnosaController::class);
             });
             
             Route::prefix("akun")->group(function () {    

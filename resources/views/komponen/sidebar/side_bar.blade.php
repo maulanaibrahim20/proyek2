@@ -117,18 +117,18 @@
                         </ul>
                     </div>
                     <li class="nav-item">
-                        <a href="{{ url('') }}">
+                        <a href="{{ url('/admin/pasien/pasien') }}">
                             <i class="fa fa-user-plus" aria-hidden="true"></i>
-                            <p>Rekam Medis</p>
+                            <p>Pasien</p>
                             <span class="badge badge-success"></span>
                         </a>
                     </li>
                 </li>
                 <li class="nav-item">
-                    <a href="widgets.html">
+                    <a href="/Cetak/cetak">
                         <i class="fa fa-print" aria-hidden="true"></i>
                         <p>Cetak</p>
-                        <span class="badge badge-success">4</span>
+                        <span class="badge badge-success"></span>
                     </a>
                 </li>
             </ul>
