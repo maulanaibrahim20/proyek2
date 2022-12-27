@@ -28,6 +28,8 @@ class CetakController extends Controller
         $nama_pasien = Pasien::where('kode_pasien', $kode_pasien)->first();
         $pdf = Pdf::loadView('admin.Pasien.pdf',compact('nama_pasien'));
         return $pdf->stream('Hasil Diagnosa Dengan Nama Pasien '.$nama_pasien->getPasien->nama.".pdf");
+        // return view ('admin.Pasien.pdf', compact('nama_pasien'));
+        
     }
     
     public function cetak_semua()
@@ -35,6 +37,6 @@ class CetakController extends Controller
         $cetak_semua = Pasien::all();
         $pdf = Pdf::loadView('Cetak.cetak_semua',compact('cetak_semua'));
         return $pdf->stream('Data Keseluruhan Pasien.pdf');
-
+        // return view ('Cetak.cetak_semua',compact('cetak_semua'));
     }
 }

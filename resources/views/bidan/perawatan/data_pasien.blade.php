@@ -49,8 +49,14 @@
                                             <td>{{ $ps->getPasien->nama }}</td>
                                             <td>{{ $ps->nomor_hp }}</td>
                                             <td class="text-center">
+                                                @if (!$ps->getJawaban)
                                                 <a href=" {{ route('diagnosa.show', $ps->kode_pasien) }}" class="btn btn-primary">
                                                     <i class="fa fa-plus">Tambah Keluhan</i>     
+                                                    @else
+                                                    <span class="badge badge-danger">
+                                                        Pasien sudah di diagnosa
+                                                    </span>
+                                                    @endif
                                                 </a>
                                                     
                                             </td>

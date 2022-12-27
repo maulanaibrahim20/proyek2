@@ -54,7 +54,7 @@ class DiagnosaController extends Controller
     
             $hasilNilai = ($nilai / $nilaiMax) * 100;
             HasilJawaban::create(['kode_pasien'=>$request->kode_pasien,'jawaban'=>$hasilNilai]);
-            return view ('');
+            return view('bidan.perawatan.pasien');
         });
 
 
