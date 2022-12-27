@@ -21,8 +21,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header d-flex justify-content-between">
                         <h4 class="card-title">Data Keluhan Pasien</h4>
+                        @role(['admin', 'kepala desa', 'kepala kecamatan', 'kepala puskesmas'])
+                        <a class="text-center btn btn-primary fa-fa-print " href="{{ route('cetak_semua') }}">
+                            <i class="fa fa-print"></i> Cetak Data Keseluruhan
+                        </a>
+                        @endrole
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -45,26 +50,28 @@
                                             <td class="text-center">{{ ++$no }}.</td>
                                             <td class="text-center">{{ $ps->kode_pasien }}.</td>
                                             <td>{{ $ps->getPasien->nama }}</td>
-                                            <td>@if  ($ps->getJawaban )
-                                                @if ($ps->getJawaban->jawaban >=70)
-                                                <span class="badge badge-danger">
-                                                    Pasien Resiko Tinggi 
-                                                </span>
+                                            <td>
+                                                @if ($ps->getJawaban)
+                                                    @if ($ps->getJawaban->jawaban >= 70)
+                                                        <span class="badge badge-danger">
+                                                            Pasien Resiko Tinggi
+                                                        </span>
+                                                    @else
+                                                        <span class="badge badge-success">
+                                                            Pasien Sehat
+                                                        </span>
+                                                    @endif
                                                 @else
-                                                <span class="badge badge-success">
-                                                    Pasien Sehat
-                                                </span>
+                                                    <span class="badge badge-warning">
+                                                        Pasien Belum Di Diagnosa
+                                                    </span>
                                                 @endif
-                                            @else
-                                            <span class="badge badge-warning">
-                                                Pasien Belum Di Diagnosa
-                                            </span>
-                                            @endif</td>
+                                            </td>
                                             <td class="text-center">
                                                 <a href=" {{ route('risti', $ps->kode_pasien) }}" class="btn btn-primary">
-                                                    <i class="fa fa-plus"> Cetak</i>     
+                                                    <i class="fa fa-print"> Cetak</i>
                                                 </a>
-                                                    
+
                                             </td>
                                         </Tr>
                                     @endforeach
@@ -76,7 +83,7 @@
             </div>
         </div>
     </div>
-{{-- tambah keluhan --}}
+    {{-- tambah keluhan --}}
 @endsection
 @section('js')
     <script src="{{ url('') }}/assets/js/plugin/datatables/datatables.min.js"></script>

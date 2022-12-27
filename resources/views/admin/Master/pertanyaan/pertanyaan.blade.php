@@ -31,7 +31,7 @@
                             <table id="basic-datatables" class="display table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th>No.</th>
+                                        <th>No. </th>
                                         <th class="text-center">Pertanyaan</th>
                                         <th class="text-center">Bobot</th>
                                         <th class="text-center">Aksi</th>

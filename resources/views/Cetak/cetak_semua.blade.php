@@ -23,8 +23,9 @@
 				<th>No.Hp</th>
 				<th>Status</th>
 			</tr>
+            @foreach ($cetak_semua as $nama_pasien )
 			<tr align="center">
-				<td>1.</td>
+                <td>{{ $loop->iteration }}</td>
 				<td>{{ $nama_pasien->getPasien->nama }}</td>
 				<td>{{ $nama_pasien->getPasien->alamat }}</td>
 				<td>{{ $nama_pasien->nomor_hp }}</td>
@@ -44,6 +45,7 @@
 				</span>
 				@endif</td>
 			</tr>
+            @endforeach
 		</table>
     </div>
 </body>

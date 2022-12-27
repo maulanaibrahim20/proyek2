@@ -2,33 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Akun\Pasien;
+use App\Models\HasilJawaban;
 use Illuminate\Http\Request;
 
 class AppController extends Controller
 {
-    public function dashboard_admin()
+    public function dashboard()
     {
+        
+
         return view('admin.dashboard_admin') ;
-        return view('dashboard') ;
-    }
-    public function dashboard_bidan()
-    {
-        return view('bidan.dashboard_bidan') ;
-    }
-    public function dashboard_kecamatan()
-    {
-        return view('kecamatan.dashboard_kecamatan');
-    }
-    public function dashboard_desa()
-    {
-        return view('desa.dashboard_desa');
-    }
-    public function dashboard_puskesmas()
-    {
-        return view('puskesmas.dashboard_puskesmas');
-    }
-    public function dashboard_pasien()
-    {
-        return view('pasien.dashboard_pasien');
     }
 }

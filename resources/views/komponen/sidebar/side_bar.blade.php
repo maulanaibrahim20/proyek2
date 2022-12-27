@@ -8,8 +8,8 @@
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-                        <span>
-                            Hizrian
+                        <span >
+                            {{ auth()->user()->nama }}
                             <span class="user-level">Administrator</span>
                             <span class="caret"></span>
                         </span>
@@ -38,26 +38,11 @@
                 </div>
             </div>
             <ul class="nav nav-primary">
-                <li class="nav-item active">
-                    <a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+                <li class="nav-item active" >
+                    <a href="{{ url('/admin/dashboard') }}" class="collapsed" aria-expanded="false">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
-                        <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="dashboard">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="{{ url('') }}/demo1/index.html">
-                                    <span class="sub-item">Dashboard 1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('') }}/demo2/index.html">
-                                    <span class="sub-item">Dashboard 2</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
@@ -65,7 +50,7 @@
                     </span>
                     <h4 class="text-section">Components</h4>
                 </li>
-                @can('admin')
+                @hasrole('admin')
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#daftar_akun">
                         <i class="fa fa-pen-square"></i>
@@ -98,7 +83,8 @@
                         <span class="badge badge-success"></span>
                     </a>
                 </li>
-                @endcan
+                @endhasrole
+                @hasrole(['admin', 'bidan'])
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#perawatan">
                         <i class="fas   fa-pen-square"></i>
@@ -116,14 +102,18 @@
                             </li>
                         </ul>
                     </div>
-                    <li class="nav-item">
-                        <a href="{{ url('/admin/pasien/pasien') }}">
-                            <i class="fa fa-user-plus" aria-hidden="true"></i>
-                            <p>Pasien</p>
-                            <span class="badge badge-success"></span>
-                        </a>
-                    </li>
                 </li>
+                @endhasrole
+                @role(['kepala desa', 'kepala kecamatan', 'kepala puskesmas', 'admin', 'pasien'])
+                <li class="nav-item">
+                    <a href="{{ url('/admin/pasien/pasien') }}">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                        <p>Pasien</p>
+                        <span class="badge badge-success"></span>
+                    </a>
+                </li>
+                @endrole
+                @role(['kepala desa', 'kepala kecamatan', 'kepala puskesmas', 'admin', 'pasien', 'bidan'])
                 <li class="nav-item">
                     <a href="/Cetak/cetak">
                         <i class="fa fa-print" aria-hidden="true"></i>
@@ -131,6 +121,7 @@
                         <span class="badge badge-success"></span>
                     </a>
                 </li>
+                @endrole
             </ul>
         </div>
     </div>

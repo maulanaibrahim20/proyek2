@@ -5,6 +5,7 @@ namespace Database\Seeders\Akun;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 
 class UserSeeder extends Seeder
 {
@@ -15,6 +16,8 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $roles = ['admin', 'kepala desa', 'kepala kecamatan', 'kepala puskesmas', 'bidan', 'pasien'];
+
         User::create([
             "nama" => "Administrator",
             "username" => "administrator",
@@ -69,5 +72,16 @@ class UserSeeder extends Seeder
             "umur" => 11,
             "role_id" => "6",
         ]);
+
+        foreach ($roles as $role) {
+            $role = Role::create([
+                'name' => $role,
+            ]);
+        }
+
+        $users = User::all();
+        foreach ($users as $user) {
+            $user->assignRole(Role::where('id', $user->role_id)->first());
+        }
     }
 }

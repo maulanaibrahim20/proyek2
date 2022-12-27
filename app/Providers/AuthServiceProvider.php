@@ -33,5 +33,41 @@ class AuthServiceProvider extends ServiceProvider
                 return $user->getAkses->id == 1;
             }
         });
+        
+        Gate::define("kepala_puskesmas", function ($user){
+            if(empty($user->getAkses)){
+                return redirect("/logout");
+            }else {
+                return $user->getAkses->id == 4;
+            }
+        });
+        Gate::define("kepala_kecamatan", function ($user){
+            if(empty($user->getAkses)){
+                return redirect("/logout");
+            }else {
+                return $user->getAkses->id == 3;
+            }
+        });
+        Gate::define("kepala_desa", function ($user){
+            if(empty($user->getAkses)){
+                return redirect("/logout");
+            }else {
+                return $user->getAkses->id ==2;
+            }
+        });
+        Gate::define("bidan", function ($user){
+            if(empty($user->getAkses)){
+                return redirect("/logout");
+            }else {
+                return $user->getAkses->id ==5;
+            }
+        });
+        Gate::define("pasien", function ($user){
+            if(empty($user->getAkses)){
+                return redirect("/logout");
+            }else {
+                return $user->getAkses->id ==6;
+            }
+        });
     }
 }

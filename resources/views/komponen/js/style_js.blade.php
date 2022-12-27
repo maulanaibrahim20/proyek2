@@ -1,3 +1,10 @@
+@php
+    use App\Models\Akun\Pasien;
+    use App\Models\HasilJawaban;
+
+    $pasien = Pasien::count();
+    $risti = HasilJawaban::where('jawaban', '>=', 70)->count();
+@endphp
 <script src="{{url('')}}/assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="{{url('')}}/assets/js/core/popper.min.js"></script>
 <script src="{{url('')}}/assets/js/core/bootstrap.min.js"></script>
@@ -40,10 +47,10 @@
 Circles.create({
     id:'circles-1',
     radius:45,
-    value:60,
-    maxValue:100,
+    value:{{ $pasien }},
+    maxValue:{{ $pasien }},
     width:7,
-    text: 5,
+    text: '{{ $pasien }}',
     colors:['#f1f1f1', '#FF9E27'],
     duration:400,
     wrpClass:'circles-wrp',
@@ -55,10 +62,10 @@ Circles.create({
 Circles.create({
     id:'circles-2',
     radius:45,
-    value:70,
-    maxValue:100,
+    value:{{ $risti }},
+    maxValue:{{ $pasien }},
     width:7,
-    text: 36,
+    text: '{{ $risti }}',
     colors:['#f1f1f1', '#2BB930'],
     duration:400,
     wrpClass:'circles-wrp',

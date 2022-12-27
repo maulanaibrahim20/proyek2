@@ -39,6 +39,7 @@ Route::get("/templating", function () {
 Route::get("/admin/pasien/pasien",[RistiController::class,"index"]);
 
 Route::get("/Cetak/cetak",[CetakController::class,"index"]);
+Route::get("/Cetak/cetak/cetak_semua",[CetakController::class,"cetak_semua"])->name('cetak_semua');
 Route::get("/Cetak/cetak/{kode_pasien}",[CetakController::class,"cetak"])->name('risti');
 
 Route::group(["middleware" => ["guest"]], function () {
@@ -48,10 +49,10 @@ Route::group(["middleware" => ["guest"]], function () {
 
 
 Route::group(["middleware" => ["autentikasi"]], function () {
+    Route::get("/admin/dashboard", [AppController::class, "dashboard"]);
     Route::group(["middleware"=>["can:admin"]], function () {
         //admin
         Route::prefix("admin")->group(function () {
-            Route::get("/dashboard", [AppController::class, "dashboard_admin"]);
             
 
             Route::prefix("Master")->group(function () {
@@ -70,20 +71,20 @@ Route::group(["middleware" => ["autentikasi"]], function () {
         });
         
     });
+    Route::get("kepala_puskesmas/dashboard", [AppController::class, "dashboard"]);
     
     Route::get("/logout", [LoginController::class, "logout"]);
     
-    Route::get("kepala_puskesmas/dashboard", [AppController::class, "dashboard_puskesmas"]);
-    Route::get("kepala_kecamatan/dashboard", [AppController::class, "dashboard_kecamatan"]);
-    Route::get("kepala_desa/dashboard", [AppController::class, "dashboard_desa"]);
-
+    Route::get("kepala_kecamatan/dashboard", [AppController::class, "dashboard"]);
+    Route::get("kepala_desa/dashboard", [AppController::class, "dashboard"]);
+    
     Route::prefix("bidan")->group(function(){
+        Route::get("dashboard", [AppController::class, "dashboard"]);
             Route::prefix("perawatan")->group(function(){
                 Route::get("/pasien", [KeluhanController::class,"data_pasien"]);  //data_pasien diambil dari class di controller keluhan
             });
-        Route::get("dashboard", [AppController::class, "dashboard_bidan"]);
+            Route::get("pasien/dashboard", [AppController::class, "dashboard"]);
         
     });
 
-    Route::get("pasien/dashboard", [AppController::class, "dashboard_pasien"]);
 });
