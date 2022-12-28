@@ -36,6 +36,10 @@ Route::get("/templating", function () {
     return view("/templating");
 });
 
+Route::get("/login1/login",function () {
+    return view("/autentikasi/login1");
+});
+
 Route::get("/admin/pasien/pasien",[RistiController::class,"index"]);
 
 Route::get("/Cetak/cetak",[CetakController::class,"index"]);

@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-inner">
         <div class="page-header">
-            <h4 class="page-title">Keluhan Pasien</h4>
+            <h4 class="page-title">Data Pasien</h4>
             <ul class="breadcrumbs">
                 <li class="nav-home">
                     <a href="{{ url('/bidan/dashboard') }}">
@@ -14,7 +14,7 @@
                     <i class="flaticon-right-arrow"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('/bidan/perawatan/pasien') }}">keluhan pasien</a>
+                    <a href="{{ url('/bidan/perawatan/pasien') }}">Data Pasien</a>
                 </li>
             </ul>
         </div>
