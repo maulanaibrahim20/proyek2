@@ -7,12 +7,13 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## About Our Team
 
     Kelompok 8 
     - Maulana Ibrahim
     - Sri Rahayu
     - Zulfa Choirunissa
+    
 
 
 
